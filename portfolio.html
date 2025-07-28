@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Jay Chandra - Portfolio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    
+
+    body {
+      background-color: #f4f4f9;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    header {
+      background: linear-gradient(90deg, #0f2027, #203a43, #2c5364);
+      color: white;
+      padding: 2rem 0;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+    }
+
+    header p {
+      font-size: 1.2rem;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1100px;
+      margin: auto;
+      padding: 2rem 0;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 1.5rem;
+      color: #2c5364;
+    }
+
+    #about p {
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto 1rem;
+    }
+
+    .portfolio-items,
+    .certificates-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+    }
+
+    .portfolio-item,
+    .certificate-item {
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      padding: 1rem;
+      text-align: center;
+      transition: transform 0.3s ease;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .portfolio-item:hover,
+    .certificate-item:hover {
+      transform: scale(1.05);
+    }
+
+    .portfolio-item img,
+    .certificate-item img {
+      width: 100%;
+      height: auto;
+      border-radius: 5px;
+    }
+
+    form input, form textarea {
+      width: 100%;
+      padding: 0.8rem;
+      margin: 0.5rem 0;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    form button {
+      background: #2c5364;
+      color: white;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 0.5rem;
+    }
+
+    form button:hover {
+      background: #1b2c3a;
+    }
+
+    footer {
+      background: #222;
+      color: #fff;
+      text-align: center;
+      padding: 2rem 0;
+      margin-top: 2rem;
+    }
+
+    .footer-images {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .footer-images img {
+      width: 30px;
+      height: 30px;
+      filter: invert(100%);
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 1.8rem;
+      }
+
+      .footer-images {
+        flex-wrap: wrap;
+      }
+    }
+    
+  .fade-slide {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeSlide 1s ease-out forwards;
+}
+
+@keyframes fadeSlide {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+  @keyframes typing {
+    to { width: 100% }
+  }
+
+  @keyframes blink {
+    50% { border-color: transparent }
+  }
+
+  .download-btn {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 12px 24px;
+    background-color: #fff;
+    color: #00bcd4;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 30px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.3);
+  }
+
+  .download-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(255, 255, 255, 0.4);
+  }
+
+  .download-btn i {
+    margin-right: 8px;
+  }
+
+  .fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.fade-in.appear {
+  opacity: 1;
+  transform: translateY(0);
+}
+#dark-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: #00bcd4;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 8px 12px;
+  cursor: pointer;
+  z-index: 1000;
+}
+body.dark-mode {
+  background-color: #292828;
+  color: #e0d6d6;
+}
+
+.dark-mode header {
+  background: linear-gradient(to right, #333, #555);
+}
+
+body.dark-mode {
+  background-color: #888080;
+  color: #0e0101; /* ✅ Light text color */
+}
+
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode p,
+body.dark-mode a {
+  color: #080101;
+}
+
+
+
+</style>
+
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+   
+  <header>
+  <h1 class="fade-slide">Hi, I'm JAY CHANDRA</h1>
+<button id="dark-toggle" title="Toggle Dark Mode">🌙</button>
+
+  <a href="resume.pdf" download class="download-btn">
+    <i class="fas fa-download"></i> Download Resume
+
+  </a>
+</header>
+
+
+  <!-- About -->
+  <section id="about">
+  <h2>About Me</h2>
+  <p class="fade-in">I am a dedicated and detail-oriented undergraduate student currently pursuing a Bachelor's degree from Patna College, Patna University, with an expected graduation in 2026. Passionate about both creativity and technology.. I have developed strong skills in content editing. programming (Python, SQL, Java), and problem-solving.
+
+My academic journey has helped me cultivate al disciplined mindset and a willingness to take on new challenges. I hold multiple certifications that reflect my continuous drive for learning and self-Improvement. Known for being adaptable, hardworking, and a good communicator, I strive to contribute effectively in team environments while also excelling independently.
+
+Fluent in Hindi and English, I enjoy activities that fuel both personal and intellectual growth, such as dancing, reading, and listening to music.</p>
+</section>
+
+
+  <!-- Portfolio -->
+  <section id="portfolio" class="container">
+    <h2>Portfolio</h2>
+    <div class="portfolio-items">
+      <!-- Repeatable Projects -->
+      <div class="portfolio-item">
+        <img src="https://via.placeholder.com/250" alt="Project 1">
+        <h3>Project 1</h3>
+        <p>Short description of the project.</p>
+      </div>
+      <div class="portfolio-item">
+        <img src="https://via.placeholder.com/250" alt="Project 2">
+        <h3>Project 2</h3>
+        <p>Short description of the project.</p>
+      </div>
+      <!-- Add more as needed -->
+    </div>
+  </section>
+
+  <!-- Certificates Section -->
+  <section id="certificates" class="container">
+    <h2>Certificates</h2>
+    <div class="certificates-grid">
+      <!-- 12 Placeholder Certificate Cards -->
+      <div class="certificate-item"><a href="CERTIFICATE/aws_certificate.jpg.jpg" target="_blank"><img src="/CERTIFICATE/aws_certificate.jpg.jpg" alt="aws certification"></a><p>AWS CERTIFICATE</p></div>
+      <div class="certificate-item"><a href="CERTIFICATE/deloitee cyber certificate_page-0001.jpg" target="_blank"><img src="/CERTIFICATE/deloitee cyber certificate_page-0001.jpg" alt="deloitee cybersecurity"></a><p></p>DELOITTE CYBERSECURITY</div>
+      <div class="certificate-item"><a href="CERTIFICATE/deloitte data anylst cerrtificate_page-0001.jpg" target="_blank"><img src="/CERTIFICATE/deloitte data anylst cerrtificate_page-0001.jpg" alt="deloitee data anylst"></a><p>DELOITTE DATA ANYLST</p></div>
+      <div class="certificate-item"><a href="CERTIFICATE/tata data visualization certificate 2024_page-0001.jpg" target="_blank"><img src="/CERTIFICATE/tata data visualization certificate 2024_page-0001.jpg" alt="TATA data visualization"></a><p>TATA DATA VISUALIZATION</p></div>
+      <div class="certificate-item"><a href="CERTIFICATE/DELOITTE CERTIFICATE_page-0001.jpg" target="_blank"><img src="/CERTIFICATE/DELOITTE CERTIFICATE_page-0001.jpg" alt="deloitee"></a><p>DELOITTE TECHNOLOGY</p></div>
+      <div class="certificate-item"><a href="CERTIFICATE/EA certificate_page-0001.jpg" target="_blank"><img src="/CERTIFICATE/EA certificate_page-0001.jpg" alt="EA jr. software engineer"></a><p>EA jr. Software Engineer</p></div>
+      <div class="certificate-item"><a href="CERTIFICATE/sql certificate.jpg" target="_blank"><img src="/CERTIFICATE/sql certificate.jpg" alt="sql"></a><p>SQL Certificate</p></div>
+      <div class="certificate-item"><a href="CERTIFICATE/c certificate_page-0001.jpg" target="_blank"><img src="/CERTIFICATE/c certificate_page-0001.jpg" alt="c"></a><p>C Certificate</p></div>
+      <div class="certificate-item"><a href="CERTIFICATE/tata cybersecurity certificate_page-0001.jpg" target="_blank"><img src="/CERTIFICATE/tata cybersecurity certificate_page-0001.jpg" alt="TATA cybersecurity"></a><p>TATA CYBERSECURITY</p></div>
+      <div class="certificate-item"><a href="CERTIFICATE/TATA AI-GEN certificate_page-0001.jpg" target="_blank"><img src="/CERTIFICATE/TATA AI-GEN certificate_page-0001.jpg" alt="TATA AI-GEN"></a><p>TATA AI-GEN</p></div>
+      <div class="certificate-item"><a href="CERTIFICATE/mastercard advisory_certificate_page-0001.jpg" target="_blank"><img src="/CERTIFICATE/mastercard advisory_certificate_page-0001.jpg" alt="mastercard advisory"></a><p>MasterCard ADVISORY</p></div>
+      <div class="certificate-item"><a href="CERTIFICATE/MasterCard cybersecurity certificate_page-0001.jpg" target="_blank"><img src="/CERTIFICATE/MasterCard cybersecurity certificate_page-0001.jpg" alt="mastercard cybersecurity"></a><p>MasterCard CYBERSECURITY</p></div>
+      
+    </div>
+  </section>
+
+  <section id="contact" class="container">
+  <h2>Contact Me</h2>
+  <form id="contactForm">
+    <input type="text" id="name" placeholder="Your Name" required>
+    <input type="email" id="email" placeholder="Your Email" required>
+    <textarea id="message" rows="5" placeholder="Your Message" required></textarea>
+    <button type="submit">Send Message</button>
+  </form>
+  <p id="formStatus"></p>
+</section>
+
+  <!-- Footer -->
+  <footer>
+  <p>&copy; 2024 Jay Chandra. All Rights Reserved.</p>
+  <div class="footer-images">
+    <a href="https://www.facebook.com/your-facebook-username" target="_blank">
+      <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook" width="30">
+    </a>
+    <a href="https://www.instagram.com/your-instagram-username" target="_blank">
+      <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram" width="30">
+    </a>
+    <a href="https://www.linkedin.com/in/jay-chandra-299126373?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank">
+      <img src="https://cdn-icons-png.flaticon.com/512/145/145807.png" alt="LinkedIn" width="30">
+    </a>
+    <a href="https://github.com/jaychandra5" target="_blank">
+      <img src="https://cdn-icons-png.flaticon.com/512/733/733553.png" alt="GitHub" width="30">
+    </a>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>
