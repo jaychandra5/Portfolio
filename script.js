@@ -42,3 +42,11 @@ const navLinks = document.getElementById('navLinks');
 navToggle.addEventListener('click', () => {
   navLinks.classList.toggle('show');
 });
+
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 50) {
+    toggleBtn.classList.add('hide');
+  } else {
+    toggleBtn.classList.remove('hide');
+  }
+});
